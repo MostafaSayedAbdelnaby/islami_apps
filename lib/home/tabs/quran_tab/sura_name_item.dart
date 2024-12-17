@@ -36,7 +36,7 @@ class SuraNameItem extends StatelessWidget {
         Text(
           name,
           style: GoogleFonts.elMessiri(
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.bold,
             fontSize: 16,
             color: Colors.white,
           ),
