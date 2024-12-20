@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/cache/cache_helper.dart';
+import 'package:islamic_app/sura_details/sura_details.dart';
 import 'home/home.dart';
 import 'on_boarding_screen.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
+        SuraDetails.routeName: (context) => SuraDetails(),
       },
       initialRoute: CacheHelper.getEligibility() == true
           ? HomeScreen.routeName

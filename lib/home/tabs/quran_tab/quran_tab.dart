@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:islamic_app/home/tabs/quran_tab/sura_item_horizontal.dart';
 import 'package:islamic_app/home/tabs/quran_tab/sura_name_item.dart';
 import 'package:islamic_app/model/sura_model.dart';
+import 'package:islamic_app/sura_details/sura_details.dart';
 
 // ignore: must_be_immutable
 class QuranTab extends StatefulWidget {
@@ -38,7 +39,6 @@ class _QuranTabState extends State<QuranTab> {
 
   @override
   Widget build(BuildContext context) {
-    /// Eng Hamouda Remove InKWell
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Column(
@@ -114,10 +114,19 @@ class _QuranTabState extends State<QuranTab> {
                 indent: 40,
               ),
               itemBuilder: (context, index) {
-                return SuraNameItem(
-                  model: searchController.text.isNotEmpty
-                      ? SuraModel.getSelectedSuraModel(index)
-                      : SuraModel.getSuraModel(index),
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      SuraDetails.routeName,
+                      arguments: SuraModel.getSuraModel(index),
+                    );
+                  },
+                  child: SuraNameItem(
+                    model: searchController.text.isNotEmpty
+                        ? SuraModel.getSelectedSuraModel(index)
+                        : SuraModel.getSuraModel(index),
+                  ),
                 );
               },
               itemCount: searchController.text.isNotEmpty

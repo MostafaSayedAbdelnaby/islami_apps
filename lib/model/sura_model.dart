@@ -382,7 +382,7 @@ class SuraModel {
     '6'
   ];
 
-  // static Map<String, Map<String, String>> createSuraMap() {
+  // static SuraModel createSuraMap(index) {
   //   Map<String, Map<String, String>> suraMap = {};
   //
   //   for (int i = 0; i < suraNamesAr.length; i++) {
@@ -392,7 +392,21 @@ class SuraModel {
   //     };
   //   }
   //
-  //   return suraMap;
+  //   return SuraModel(
+  //     numOFVerses: suraVerseCounts[index],
+  //     nameEn: searchResult[index],
+  //     nameAr: searchResult[index],
+  //     index: index,
+  //   );
   // }
+
+  // static Map<String, Map<String, dynamic>> suraMap = {
+  //   "0": {
+  //     "suraNameArabic": "الفاتحه",
+  //     "suraNameEnglish": "Al-Fatiha",
+  //     "suraVersesNumber": 7,
+  //     "index": "1"
+  //   },
+  // };
 
 }
