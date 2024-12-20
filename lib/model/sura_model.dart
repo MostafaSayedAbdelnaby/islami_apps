@@ -382,17 +382,17 @@ class SuraModel {
     '6'
   ];
 
-  static Map<String, Map<String, String>> createSuraMap() {
-    Map<String, Map<String, String>> suraMap = {};
-
-    for (int i = 0; i < suraNamesAr.length; i++) {
-      suraMap[suraNamesAr[i]] = {
-        'english': suraNamesEn[i],
-        'verseCount': suraVerseCounts[i],
-      };
-    }
-
-    return suraMap;
-  }
+  // static Map<String, Map<String, String>> createSuraMap() {
+  //   Map<String, Map<String, String>> suraMap = {};
+  //
+  //   for (int i = 0; i < suraNamesAr.length; i++) {
+  //     suraMap[suraNamesAr[i]] = {
+  //       'english': suraNamesEn[i],
+  //       'verseCount': suraVerseCounts[i],
+  //     };
+  //   }
+  //
+  //   return suraMap;
+  // }
 
 }
