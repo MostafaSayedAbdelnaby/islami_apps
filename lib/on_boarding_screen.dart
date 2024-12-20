@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:islamic_app/cache/cache_helper.dart';
 import 'package:islamic_app/home/home.dart';
-// import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 
-// import 'home.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   static const routeName = "/";
@@ -61,7 +60,9 @@ class OnBoardingScreen extends StatelessWidget {
         ),
       ),
       onDone: () {
-        Navigator.pushReplacementNamed(context, HomeScreen.routeNamed);
+        Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+        /// If this page opens once, it will not open again until I close the project and Run
+        CacheHelper.safeEligibility();
       },
       showSkipButton: true,
       skip: Text(

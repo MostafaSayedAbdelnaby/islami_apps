@@ -1,42 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../model/sura_model.dart';
 
 class SuraItemHorizontal extends StatelessWidget {
-  final String name;
+  final SuraModel model;
 
-  const SuraItemHorizontal({required this.name, super.key});
+  const SuraItemHorizontal({required this.model, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      margin: EdgeInsets.symmetric(vertical: 8),
+      padding: EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
         color: Color(0xFFE2BE7F),
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Row(
-            // mainAxisAlignment: MainAxisAlignment.start,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
-                children: [
-                  SizedBox(height: 20,),
-                  Text(
-                    name,
-                    style: GoogleFonts.elMessiri(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,
-                      color: Color(0xFF202020),
-                    ),
-                  ),
-                ],
+              Text(
+                model.nameEn,
+                style: GoogleFonts.elMessiri(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 24,
+                  color: Color(0xFF202020),
+                ),
               ),
-              SizedBox(width: 20,),
-              Image.asset("assets/images/sura_item_horizontal.png"),
+              Text(
+                model.nameAr,
+                style: GoogleFonts.elMessiri(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 24,
+                  color: Color(0xFF202020),
+                ),
+              ),
+              Text(
+                "${model.numOFVerses} \tVerses",
+                style: GoogleFonts.elMessiri(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 18,
+                  color: Color(0xFF202020),
+                ),
+              ),
             ],
           ),
+          SizedBox(
+            width: 16,
+          ),
+          Image.asset("assets/images/sura_item_horizontal.png"),
         ],
       ),
     );
