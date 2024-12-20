@@ -6,7 +6,7 @@ import 'package:islamic_app/home/tabs/radio_tab.dart';
 import 'package:islamic_app/home/tabs/sebha_tab.dart';
 
 class HomeScreen extends StatefulWidget {
-  static const routeNamed = "Home";
+  static const routeName = "Home";
 
   const HomeScreen({super.key});
 
