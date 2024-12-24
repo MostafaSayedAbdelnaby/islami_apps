@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/cache/cache_helper.dart';
+import 'package:islamic_app/my_theme_data.dart';
 import 'package:islamic_app/sura_details/sura_details.dart';
 import 'home/home.dart';
 import 'on_boarding_screen.dart';
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: MyThemeData.lightTheme,
+      darkTheme: MyThemeData.darkTheme,
+      themeMode: ThemeMode.light,
       routes: {
         OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),

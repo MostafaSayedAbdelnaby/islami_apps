@@ -27,17 +27,17 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        // backgroundColor: Colors.transparent,
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color(0xFFE2BE7F),
+          // backgroundColor: Color(0xFFE2BE7F),
+          // type: BottomNavigationBarType.fixed,
+          // selectedItemColor: Colors.white,
+          // showUnselectedLabels: false,
           currentIndex: currentIndex,
           onTap: (value) {
             currentIndex = value; // to enable play on a many ImageIcon
             setState(() {});
           },
-          showUnselectedLabels: false,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: Colors.white,
           items: [
             BottomNavigationBarItem(
                 icon: _buildNavItem("quran", 0),
@@ -62,7 +62,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         body: tabs[currentIndex],
-
       ),
     );
   }

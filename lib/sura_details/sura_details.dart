@@ -25,13 +25,15 @@ class _SuraDetailsState extends State<SuraDetails> {
     return Scaffold(
       backgroundColor: Color(0xFF202020),
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Color(0xFFE2BE7F)),
+        iconTheme: IconThemeData(
+          color: Theme.of(context).primaryColor,
+        ),
         backgroundColor: Color(0xFF202020),
         centerTitle: true,
         title: Text(
           model.nameEn,
           style: GoogleFonts.elMessiri(
-            color: Color(0xFFE2BE7F),
+            color: Theme.of(context).primaryColor,
             fontSize: 26,
             fontWeight: FontWeight.w700,
           ),
@@ -47,11 +49,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                 Image.asset("assets/images/Mask left.png"),
                 Text(
                   model.nameAr,
-                  style: GoogleFonts.elMessiri(
-                    color: Color(0xFFE2BE7F),
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 Image.asset("assets/images/Mask right.png"),
               ],
@@ -65,11 +63,11 @@ class _SuraDetailsState extends State<SuraDetails> {
                   ),
                   itemBuilder: (context, index) {
                     return Container(
-                      padding: EdgeInsets.symmetric(horizontal: 6,vertical: 6),
+                      padding: EdgeInsets.symmetric(horizontal: 6, vertical: 6),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         border: Border.all(
-                          color: Color(0xFFE2BE7F),
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
                       child: Directionality(
@@ -81,40 +79,36 @@ class _SuraDetailsState extends State<SuraDetails> {
                               TextSpan(
                                 /// gets Ayat Al Quran
                                 text: verses[index],
-                                style: GoogleFonts.aBeeZee(
-                                  color: Color(0xFFE2BE7F),
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w700,
-                                ),
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                               TextSpan(
-                                  children: [
-                                WidgetSpan(
-                                  alignment: PlaceholderAlignment.middle,
-                                  child: Stack(
-                                    alignment: Alignment.center,
-                                    children: [
-                                      Image.asset(
-                                        "assets/images/sura_number.png",
-                                        color: Colors.white,
-                                        height: 30,
-                                      ),
-                                      // The text span for the Ayat number
-                                      Text(
-                                        "${index + 1}",
-                                        style: GoogleFonts.aBeeZee(
+                                children: [
+                                  WidgetSpan(
+                                    alignment: PlaceholderAlignment.middle,
+                                    child: Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        Image.asset(
+                                          "assets/images/sura_number.png",
                                           color: Colors.white,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w700,
+                                          height: 30,
                                         ),
-                                        // textAlign: TextAlign.center,
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
+                                        // The text span for the Ayat number
+                                        Text(
+                                          "${index + 1}",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall!
+                                              .copyWith(
+                                                color: Colors.white,
+                                              ),
+                                          // textAlign: TextAlign.center,
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
                               ),
-
                               // TextSpan(
                               //   /// gets number of Ayat Al Quran
                               //   text: "(${index + 1})",
