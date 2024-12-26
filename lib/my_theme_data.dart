@@ -7,6 +7,7 @@ class MyThemeData {
 
   static ThemeData lightTheme = ThemeData(
     primaryColor: primaryColor,
+    // cardColor: blackColor,
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
       backgroundColor: blackColor,

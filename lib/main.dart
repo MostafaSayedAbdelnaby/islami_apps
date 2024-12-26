@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/cache/cache_helper.dart';
+import 'package:islamic_app/hadeth_details/hadeth_details.dart';
 import 'package:islamic_app/my_theme_data.dart';
 import 'package:islamic_app/sura_details/sura_details.dart';
 import 'home/home.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
         SuraDetails.routeName: (context) => SuraDetails(),
+        HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
       },
       initialRoute: CacheHelper.getEligibility() == true
           ? HomeScreen.routeName
