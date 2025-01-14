@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
-
+import 'package:islamic_app/cache/cache_helper.dart';
+import 'package:islamic_app/hadeth_details/hadeth_details.dart';
+import 'package:islamic_app/my_theme_data.dart';
+import 'package:islamic_app/sura_details/sura_details.dart';
 import 'home/home.dart';
 import 'on_boarding_screen.dart';
 
-void main() {
+void main() async {
+  /// Safe the next Line when used to async, tell runApp that it works but don't built project Except when Initialized CacheHelper
+  /// runApp && CacheHelper.init are works parallel at the same time
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();
   runApp(MyApp());
 }
 
@@ -14,12 +21,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: MyThemeData.lightTheme,
+      darkTheme: MyThemeData.darkTheme,
+      themeMode: ThemeMode.light,
       routes: {
-        OnBoardingScreen.routeName: (context) => OnBoardingScreen(),
-        HomeScreen.routeNamed: (context) => HomeScreen(),
-        HomeScreen.routeNamed: (context) => HomeScreen(),
+        OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
+        HomeScreen.routeName: (context) => HomeScreen(),
+        SuraDetails.routeName: (context) => SuraDetails(),
+        HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
       },
-      initialRoute: '/',
+      initialRoute: CacheHelper.getEligibility() == true
+          ? HomeScreen.routeName
+          : OnBoardingScreen.routeName,
     );
   }
 }
