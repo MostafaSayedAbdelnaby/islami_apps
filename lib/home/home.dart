@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/home/tabs/ahadeth_tab.dart';
-import 'package:islamic_app/home/tabs/date_tab.dart';
+import 'package:islamic_app/home/tabs/date_tab/date_tab.dart';
 import 'package:islamic_app/home/tabs/quran_tab/quran_tab.dart';
 import 'package:islamic_app/home/tabs/radio_tab.dart';
 import 'package:islamic_app/home/tabs/sebha_tab.dart';
@@ -27,15 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       child: Scaffold(
-        // backgroundColor: Colors.transparent,
         bottomNavigationBar: BottomNavigationBar(
-          // backgroundColor: Color(0xFFE2BE7F),
-          // type: BottomNavigationBarType.fixed,
-          // selectedItemColor: Colors.white,
-          // showUnselectedLabels: false,
           currentIndex: currentIndex,
           onTap: (value) {
-            currentIndex = value; // to enable play on a many ImageIcon
+            currentIndex = value; // to enable play on a many ImageIcon (tabs)
             setState(() {});
           },
           items: [
@@ -61,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 backgroundColor: Colors.white),
           ],
         ),
-        body: tabs[currentIndex],
+        body: tabs[currentIndex], /// return selectedTab in body
       ),
     );
   }
@@ -92,6 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildNavItem(String imageName, int index) {
     return currentIndex == index
         ? Container(
+            // to make container on selected tabBarIcon
             padding: EdgeInsets.symmetric(vertical: 4, horizontal: 20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(66),

@@ -51,9 +51,6 @@ class HadethDetailsScreen extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 6, vertical: 6),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        // border: Border.all(
-                        //   color: Theme.of(context).primaryColor,
-                        // ),
                       ),
                       child: Directionality(
                         textDirection: TextDirection.rtl,
@@ -62,7 +59,7 @@ class HadethDetailsScreen extends StatelessWidget {
                           TextSpan(
                             children: [
                               TextSpan(
-                                /// gets Ayat Al Quran
+                                /// gets hadeth
                                 text: model.content[index],
                                 style: Theme.of(context).textTheme.bodyMedium,
                               ),

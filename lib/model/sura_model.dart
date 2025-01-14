@@ -31,8 +31,9 @@ class SuraModel {
     );
   }
 
-  static List<String> searchResult = [];
+  /// collection of lists contain data
 
+  static List<String> searchResult = [];
   static List<String> suraNamesAr = [
     "الفاتحه",
     "البقرة",

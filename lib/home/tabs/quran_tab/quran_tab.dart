@@ -14,7 +14,7 @@ class QuranTab extends StatefulWidget {
 }
 
 class _QuranTabState extends State<QuranTab> {
-  /// searchController is an Object , it's used to if act an Action on Search of TextField
+  /// searchController is an Object , it's used to if acts an Action on Search of TextField
   /// searchController has another name [listener]
   var searchController = TextEditingController();
 
@@ -187,7 +187,7 @@ class _QuranTabState extends State<QuranTab> {
           ),
         ),
         SizedBox(
-          height: 10,
+          height: 10
         ),
       ],
     );

@@ -49,7 +49,7 @@ class SuraItemHorizontal extends StatelessWidget {
             ],
           ),
           SizedBox(
-            width: 16,
+            width: 16
           ),
           Image.asset("assets/images/sura_item_horizontal.png"),
         ],

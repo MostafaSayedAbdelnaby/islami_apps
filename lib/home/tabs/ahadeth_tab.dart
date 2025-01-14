@@ -72,8 +72,8 @@ class _AhadethTabState extends State<AhadethTab> {
                                   child: Text(
                                     hadeth.content.first,
                                     textAlign: TextAlign.center,
-                                    maxLines: 16,
                                     // maxLines related with overflow it's used when the lines is bigger
+                                    maxLines: 16,
                                     style: Theme.of(context)
                                         .textTheme
                                         .bodySmall!
@@ -105,10 +105,10 @@ class _AhadethTabState extends State<AhadethTab> {
   loadHadethFile() {
     rootBundle.loadString("assets/files/ahadeth.txt").then((file) {
       // I have a first hadeth.
-      List<String> ahadeth =
-          file.split("#"); // split between two lines in first hadeth.
+      List<String> ahadeth = file.split("#"); // split between two hadeth.
 
       for (String data in ahadeth) {
+        /// trim() is delete right and left space for lines (first hadeth). trimRight() & trimLeft()
         List<String> lines = data.trim().split("\n");
         String hadethTitle = lines[0];
         lines.removeAt(0);

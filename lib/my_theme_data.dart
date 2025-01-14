@@ -59,7 +59,7 @@ class MyThemeData {
       ),
       bodyLarge: GoogleFonts.elMessiri(
         color: primaryColor,
-        fontSize: 24,
+        fontSize: 32,
         fontWeight: FontWeight.w700,
       ),
     ),

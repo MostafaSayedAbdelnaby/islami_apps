@@ -18,10 +18,13 @@ class _SuraDetailsState extends State<SuraDetails> {
 
   @override
   Widget build(BuildContext context) {
+    /// come in QuranTab to used to here
     var model = ModalRoute.of(context)?.settings.arguments as SuraModel;
+
     if (verses.isEmpty) {
-      loadSuraFile(model.index + 1);
+      loadSuraFile(model.index + 1);  // handel numberOfSura because don't exist Zero num
     }
+
     return Scaffold(
       backgroundColor: Color(0xFF202020),
       appBar: AppBar(
@@ -135,6 +138,7 @@ class _SuraDetailsState extends State<SuraDetails> {
     );
   }
 
+  /// in future come in a backend
   loadSuraFile(int index) async {
     String file = await rootBundle.loadString("assets/files/$index.txt");
     List<String> lines = file.split("\n");

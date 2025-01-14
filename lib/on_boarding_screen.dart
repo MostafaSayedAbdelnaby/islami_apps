@@ -63,7 +63,7 @@ class OnBoardingScreen extends StatelessWidget {
       ),
       onDone: () {
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
-        /// If this page opens once, it will not open again until I close the project and Run
+        /// If this page open once, it will not open again until I'm closed the project and Run
         CacheHelper.safeEligibility();
       },
       showSkipButton: true,

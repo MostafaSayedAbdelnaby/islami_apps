@@ -7,7 +7,7 @@ class CacheHelper {
     prefs = await SharedPreferences.getInstance();
   }
 
-  /// This function can tell us if it saw any action. {it can saw and it can't saw}
+  /// This function can tell us if it saw any action. {it saw and can't saw}
   static safeEligibility() {
     prefs.setBool("onBoarding", true);
   }
